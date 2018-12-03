@@ -40,7 +40,7 @@ export const webpackServerRules = (argv: IArgv): any[] => {
             },
           ],
           require.resolve('react-hot-loader/babel'),
-          require.resolve('react-loadable/babel'),
+          require.resolve('@loadable/babel-plugin'),
         ],
       },
     },

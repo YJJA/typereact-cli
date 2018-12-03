@@ -1,10 +1,10 @@
 import webpack, { Plugin } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import { ReactLoadablePlugin } from 'react-loadable/webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import LoadablePlugin from '@loadable/webpack-plugin';
 // import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 import { IArgv } from '../../interfaces/argv.interface';
@@ -34,9 +34,7 @@ export const webpackClientPlugins = (argv: IArgv): any[] => {
         argv.dev ? 'development' : 'production'
       ),
     }),
-    new ReactLoadablePlugin({
-      filename: paths.distPath(argv, 'react-loadable.json'),
-    }),
+    new LoadablePlugin(),
     new MiniCssExtractPlugin({
       filename:
         `static/styles/[name]${argv.dev ? '' : '.[contenthash]'}` + '.css',
