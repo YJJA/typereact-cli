@@ -14,10 +14,11 @@ export const webpackClientPlugins = (argv: IArgv): any[] => {
   let plugins: any[] = [
     new ForkTsCheckerWebpackPlugin({
       tsconfig: paths.srcPath(argv, 'tsconfig.json'),
+      reportFiles: ['src/**/*.{ts,tsx}']
     }),
     new HtmlWebpackPlugin({
-      filename: argv.dev ? 'public/index.html' : './index.html',
-      template: paths.srcPath(argv, 'src/index.html'),
+      filename: argv.dev ? 'public/index.html' : 'index.html',
+      template: paths.srcPath(argv, 'src/public/index.html'),
     }),
     new webpack.LoaderOptionsPlugin({
       debug: argv.dev,
@@ -25,6 +26,7 @@ export const webpackClientPlugins = (argv: IArgv): any[] => {
     new CopyWebpackPlugin([
       {
         from: paths.srcPath(argv, 'src/public'),
+        ignore: ['index.html'],
         to: '',
       },
     ]),

@@ -1,7 +1,7 @@
 /*
   webpack client config
  */
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import { paths } from './paths';
 import { webpackClientRules } from './webpack/webpack.client.config.rules';
@@ -44,8 +44,8 @@ export const webpackClientConfig = (argv: IArgv): Configuration => {
             },
           },
           minimizer: [
-            new UglifyJsPlugin({
-              uglifyOptions: {
+            new TerserPlugin({
+              terserOptions: {
                 compress: {
                   drop_console: true,
                 },

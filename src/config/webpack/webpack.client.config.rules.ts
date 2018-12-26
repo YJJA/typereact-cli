@@ -9,11 +9,11 @@ export const webpackClientRules = (argv: IArgv): Rule[] => {
       test: /\.(tsx?)$/,
       enforce: 'pre',
       loader: 'tslint-loader',
-      include: [paths.srcPath(argv)],
+      include: [paths.srcPath(argv, 'src')],
     },
     {
       test: /\.(tsx?)|(js)$/,
-      include: [paths.srcPath(argv)],
+      include: [paths.srcPath(argv, 'src')],
       loader: 'babel-loader',
       options: {
         babelrc: false,

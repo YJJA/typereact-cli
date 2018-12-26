@@ -34,7 +34,7 @@ export const watchClient = (argv: IArgv) => {
         : '';
       if (fsd.existsSync(filePath)) {
         const index = fsd.readFileSync(filePath, 'utf-8');
-        const indexPath = paths.distPath(argv, 'index.html');
+        const indexPath = paths.distPath(argv, 'public/index.html');
         fse.outputFileSync(indexPath, index, 'utf8');
       }
 

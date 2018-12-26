@@ -7,12 +7,12 @@ export const webpackServerRules = (argv: IArgv): any[] => {
       test: /\.(tsx?)|(js)$/,
       enforce: 'pre',
       loader: 'tslint-loader',
-      include: [paths.srcPath(argv)],
+      include: [paths.srcPath(argv, 'src')],
     },
     {
       test: /\.(tsx?)|(js)$/,
       loader: 'babel-loader',
-      include: [paths.srcPath(argv)],
+      include: [paths.srcPath(argv, 'src')],
       options: {
         babelrc: false,
         cacheDirectory: true,

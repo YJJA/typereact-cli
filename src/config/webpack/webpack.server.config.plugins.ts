@@ -7,6 +7,7 @@ export const webpackServerPlugins = (argv: IArgv): any => {
   let plugins = [
     new ForkTsCheckerWebpackPlugin({
       tsconfig: paths.srcPath(argv, 'tsconfig.json'),
+      reportFiles: ['src/**/*.{ts,tsx}']
     }),
     new webpack.DefinePlugin({
       'process.env.RUNTIME_ENV': JSON.stringify('server'),
