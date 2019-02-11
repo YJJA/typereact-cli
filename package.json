@@ -1,6 +1,6 @@
 {
   "name": "typereact-cli",
-  "version": "1.1.23",
+  "version": "1.2.0",
   "author": "YJJA",
   "engines": {
     "node": ">= 8.9.0"
@@ -25,7 +25,7 @@
     "@babel/preset-env": "7.3.1",
     "@babel/preset-react": "7.0.0",
     "@babel/preset-typescript": "7.1.0",
-    "@loadable/babel-plugin": "5.6.1",
+    "@loadable/babel-plugin": "5.6.0s",
     "@loadable/webpack-plugin": "5.5.0",
     "@types/webpack-env": "*",
     "babel-loader": "8.0.5",
